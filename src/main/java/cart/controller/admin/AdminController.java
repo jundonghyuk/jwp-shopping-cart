@@ -15,6 +15,7 @@ public class AdminController {
     private final ProductManagementService productManagementService;
 
     public AdminController(final ProductManagementService productManagementService) {
+        System.out.println("hi jenkins");
         this.productManagementService = productManagementService;
     }
 
