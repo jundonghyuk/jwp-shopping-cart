@@ -30,6 +30,7 @@ public class Base64AdminAccessInterceptor implements HandlerInterceptor {
         System.out.println();
         System.out.println();
         System.out.println();
+        System.out.println();
         final String[] emailAndPasswordWithDecryption = auth.split(":");
         final String email = emailAndPasswordWithDecryption[0];
         final String password = emailAndPasswordWithDecryption[1];
