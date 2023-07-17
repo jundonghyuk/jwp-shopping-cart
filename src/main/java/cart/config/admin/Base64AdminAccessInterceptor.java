@@ -2,6 +2,7 @@ package cart.config.admin;
 
 import cart.config.auth.Base64AuthInterceptor;
 import cart.service.AuthService;
+import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Base64Utils;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -26,7 +27,7 @@ public class Base64AdminAccessInterceptor implements HandlerInterceptor {
         final String authValue = request.getHeader(Base64AuthInterceptor.AUTHORIZATION_HEADER);
         final String authValueWithBase64Encoding = authValue.substring(Base64AuthInterceptor.BASIC.length()).trim();
         final String auth = new String(Base64Utils.decodeFromString(authValueWithBase64Encoding));
-
+        System.out.println();
         final String[] emailAndPasswordWithDecryption = auth.split(":");
         final String email = emailAndPasswordWithDecryption[0];
         final String password = emailAndPasswordWithDecryption[1];
